@@ -239,7 +239,7 @@ export default class Login extends Component<LoginProps> {
 
     async verify() {
         const code = this.state.digits.join("");
-        const response = await fetch(`http://localhost:3080/api/v1.0/verify`, {
+        const response = await fetch(`/api/v1.0/verify`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({code: code})
