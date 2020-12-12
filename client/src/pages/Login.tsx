@@ -1,6 +1,9 @@
 import React, { Component, ReactElement, Fragment } from "react";
 import { Redirect } from "react-router-dom";
-const CSSTransition = require('react-transition-group');
+import { CSSTransition } from "react-transition-group";
+
+const port = (process.env.NODE_ENV === 'test')?5000:(process.env.PORT || 3080);
+const domain = (process.env.NODE_ENV === 'production')?'':'http://localhost:'+port;
 
 /**
  * Interfaces
@@ -20,6 +23,7 @@ interface State {
 
 export default class Login extends Component<LoginProps> {
     static digits = 6;
+    wrapper: React.RefObject<HTMLInputElement>;
 
     constructor(props: LoginProps) {
         super(props);
@@ -40,6 +44,8 @@ export default class Login extends Component<LoginProps> {
         this.handlePaste = this.handlePaste.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        
+        this.wrapper = React.createRef();
     }
 
     public readonly state: State = {
@@ -232,7 +238,7 @@ export default class Login extends Component<LoginProps> {
 
     async verify() {
         const code = this.state.digits.join("");
-        const response = await fetch(`/api/v1.0/verify`, {
+        const response = await fetch(domain+'/api/v1.0/verify', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({code: code})
