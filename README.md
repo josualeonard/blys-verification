@@ -2,11 +2,11 @@
 
 #### Structure
 
-NodeJS
-|
-|--- ReactJS Client
-|--- __test__ (for api)
-|--- server.js
+NodeJS<br />
+|<br />
+|--- ReactJS Client<br />
+|--- __test__ (for api)<br />
+|--- server.js<br />
 
 #### Stacks and Tech
 
