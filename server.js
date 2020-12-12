@@ -11,6 +11,9 @@ const app = express();
 // Set our backend port to be either an environment variable or port 3080
 const port = (process.env.NODE_ENV === 'test')?5000:(process.env.PORT || 3080);
 
+const buildPath = path.join(__dirname, 'client/build');
+app.use(express.static(buildPath));
+
 // This application level middleware prints incoming requests to the servers console
 app.use((req, res, next) => {
     console.log(`Request_Endpoint: ${req.method} ${req.url}`);
