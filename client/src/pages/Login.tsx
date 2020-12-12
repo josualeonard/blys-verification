@@ -1,6 +1,6 @@
 import React, { Component, ReactElement, Fragment } from "react";
 import { Redirect } from "react-router-dom";
-import { CSSTransition } from 'react-transition-group';
+const CSSTransition = require('react-transition-group');
 
 /**
  * Interfaces
