@@ -56,24 +56,17 @@ export default class Login extends Component<LoginProps> {
         this.props.setAppState(isLogin, statusMessage);
     }
 
-    // Prev/back field
+    /* Prev/back field */
     handleKeyDown(event: any) {
         const keyCode = event.keyCode;
         const elm = event.target;
         const fieldId = parseInt(elm.getAttribute('data-field-id'));
-        // Prev/back field
         switch(keyCode) {
-            // Backspace
             case 8: this.onFieldUpdate(elm, -1, fieldId, -1); break;
-            // Left
-            // eslint-disable-next-line no-fallthrough
-            case 37:
-            // eslint-disable-next-line no-fallthrough
+            case 37: this.gotoPrevField(fieldId); break;
             case 38: this.gotoPrevField(fieldId); break;
-            case 39: 
-            // eslint-disable-next-line no-fallthrough
+            case 39: this.gotoNextField(fieldId); break;
             case 40: this.gotoNextField(fieldId); break;
-            
         }
     }
 
@@ -264,7 +257,6 @@ export default class Login extends Component<LoginProps> {
 
     render(): ReactElement {
         if(this.state.isVerified) return <Redirect to={{pathname: "/success"}} />;
-
         return <Fragment>
             <div className={"form-container"+(this.state.isVerifying?" verifying":"")}>
                 <form id="verification" className="form" onSubmit={this.handleSubmit}>

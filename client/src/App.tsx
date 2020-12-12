@@ -35,7 +35,7 @@ export default class App extends Component {
         statusMessage: ""
     }
 
-    // Update app state from login component
+    /* Update app state from login component */
     setAppState(isLogin: boolean, statusMessage: string): void {
         this.setState({isLogin: isLogin, statusMessage: statusMessage});
     }
