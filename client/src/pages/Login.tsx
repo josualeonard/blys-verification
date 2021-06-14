@@ -290,6 +290,13 @@ export default class Login extends Component<LoginProps> {
                         }
                     </div>
                 </form>
+
+                <div className="explanation">
+                    <p>The code RULE is 6 digits long AND last digit NOT 7</p>
+                    <p>User able to both manually enter the digits or paste the
+                    code from clipboard</p>
+                    <p>Successful verification will bring user to success page</p>
+                </div>
             </div>
         </Fragment>;
     }

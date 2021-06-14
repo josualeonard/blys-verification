@@ -27,6 +27,7 @@ export default class Home extends Component<HomeProps> {
                             </Fragment>:
                             <Fragment>
                                 <h1 className="line">You are not verified yet</h1>
+                                <h3 className="line"><a href="/" className="link">Reauthenticate</a></h3>
                             </Fragment>
                     }
                 </div>

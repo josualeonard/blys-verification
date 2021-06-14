@@ -56,5 +56,6 @@
   },
   "engines": {
     "node": "v14.15.1"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

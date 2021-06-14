@@ -148,6 +148,30 @@ body {
   outline: none;
 }
 
+
+.explanation {
+  position: relative;
+  font-size: 12px;
+  background-image: linear-gradient(#eee, #ddd);
+  box-shadow: 1px 5px 5px #ccc;
+  margin: 20px auto 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  max-width: 480px;
+  min-width: 240px;
+}
+
+.link,
+.link:visited {
+  color: #066fdc;
+  text-decoration: none;
+}
+.link:hover {
+  color: #4ba2ff;
+  text-decoration: underline;
+}
+
 /* Spinner */
 .lds-ellipsis {
   display: inline-block;
